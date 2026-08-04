@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Edit Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+        .admin-box {
+            max-width: 600px;
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+        }
+        .admin-box h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--accent);
+            letter-spacing: 0.3px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 20px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 14px;
+        }
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        button {
+            background: var(--accent);
+            color: #0a0e14;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #status {
+            margin-top: 14px;
+            font-size: 14px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .status-ok { color: var(--accent); }
+        .status-error { color: #f87171; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-box">
+        <a class="back-link" href="index.html">&larr; Back to portfolio</a>
+        <h1>Edit Profile</h1>
+
+        <form id="profile-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="bio">Bio</label>
+            <textarea id="bio" name="bio" required></textarea>
+
+            <label for="coursework">Coursework</label>
+            <textarea id="coursework" name="coursework" required></textarea>
+
+            <button type="submit">Save</button>
+        </form>
+
+        <p id="status"></p>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
